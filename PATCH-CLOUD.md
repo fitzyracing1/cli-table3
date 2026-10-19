@@ -25,3 +25,22 @@ A rowSpan that extends past the last row is clamped instead of crashing with "Ty
 ## Opting out
 
 Remove the patch-cloud `registry=` override and reinstall from registry.npmjs.org to get the upstream tarball.
+
+## GitHub Packages (scoped name)
+
+The same patched build can be published to GitHub Packages as `@fitzyracing1/cli-table3@0.6.5`
+(GitHub Packages only accepts names scoped to the repo owner). The unscoped name `cli-table3`
+is what the patch-cloud registry serves; the scoped name is what GitHub Packages serves.
+
+```ini
+# .npmrc (project or ~/.npmrc). GitHub Packages npm needs a token even for public packages:
+@fitzyracing1:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}   # a token with read:packages
+```
+
+```bash
+# keep require('cli-table3') / import 'cli-table3' working via an npm alias:
+npm install cli-table3@npm:@fitzyracing1/cli-table3@0.6.5
+# or install under the scoped name:
+npm install @fitzyracing1/cli-table3@0.6.5
+```

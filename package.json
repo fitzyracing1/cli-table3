@@ -1,6 +1,13 @@
 {
-  "name": "cli-table3",
+  "name": "@fitzyracing1/cli-table3",
   "version": "0.6.5",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fitzyracing1/cli-table3.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "description": "Pretty unicode tables for the command line. Based on the original cli-table.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -35,10 +42,6 @@
     "prettier": "prettier --write '{examples,lib,scripts,src,test}/**/*.js'",
     "test": "jest --color",
     "test:watch": "jest --color --watchAll --notify"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cli-table/cli-table3.git"
   },
   "keywords": [
     "node",
@@ -106,6 +109,9 @@
     "baseRef": "tag v0.6.5",
     "upstreamVersion": "0.6.5",
     "fix": "A rowSpan that extends past the last row is clamped instead of crashing with \"TypeError: Cannot read properties of undefined (reading 'length')\".",
-    "details": "See PATCH-CLOUD.md in this package."
+    "details": "See PATCH-CLOUD.md in this package.",
+    "scopedName": "@fitzyracing1/cli-table3",
+    "unscopedName": "cli-table3",
+    "githubPackages": "https://github.com/fitzyracing1/cli-table3/pkgs/npm/cli-table3"
   }
 }
